@@ -3,6 +3,7 @@ package de.acando.jk.starter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -19,6 +20,7 @@ import de.acando.jk.starter.service.SimpleService;
 @Configuration
 @ConditionalOnWebApplication
 @ComponentScan("de.acando.jk.starter.rest")
+@EnableConfigurationProperties(SimpleProperties.class)
 public class SimpleAutoConfiguration {
 
 	@Bean
