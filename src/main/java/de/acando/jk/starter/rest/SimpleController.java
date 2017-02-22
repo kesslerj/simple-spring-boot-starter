@@ -3,6 +3,7 @@ package de.acando.jk.starter.rest;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,7 +19,8 @@ public class SimpleController {
 	@Autowired
 	private SimpleService service;
 
-	String[] items = { "data", "transactions", "boot" };
+	@Value("${items:data,transactions}")
+	String[] items;
 
 	@GetMapping("/startertest")
 	public List<String> starterTest() {
